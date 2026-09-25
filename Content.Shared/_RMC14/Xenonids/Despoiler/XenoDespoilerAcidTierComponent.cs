@@ -7,7 +7,7 @@ namespace Content.Shared._RMC14.Xenonids.Despoiler;
 public sealed partial class XenoDespoilerAcidTierComponent : Component
 {
     [DataField, AutoNetworkedField]
-    public int Tier = 1;
+    public int Tier = 0;
 
     [DataField, AutoNetworkedField]
     public int MaxTier = 4;
