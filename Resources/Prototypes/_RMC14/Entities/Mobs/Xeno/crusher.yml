@@ -76,6 +76,7 @@
     explosionArmor: 100
   - type: XenoClaws
     clawType: VerySharp
+    armorPiercing: 10
   - type: MeleeWeapon
     angle: 60
     maxTargets: 2
