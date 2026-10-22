@@ -88,6 +88,7 @@
     explosionArmor: 40
   - type: XenoClaws
     clawType: Sharp
+    armorPiercing: 5
   - type: MeleeWeapon
     damage:
       types:
