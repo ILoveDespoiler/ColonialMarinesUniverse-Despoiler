@@ -1,0 +1,34 @@
+- type: reagent
+  parent: CMReagent
+  id: CMURM82
+  name: reagent-name-cmu-rm82
+  desc: reagent-desc-cmu-rm82
+  physicalDesc: reagent-physical-desc-viscous
+  flavor: bitter
+  color: "#a65d7f"
+  unknown: true
+  overdose: 10
+  metabolisms:  
+    Bloodstream:  
+      cmuToxicity: [ Poison ]  
+      metabolismRate: 0.1  
+      effects:  
+      - !type:Mycotoxigenic
+
+- type: reagent
+  parent: CMReagent
+  id: CMURM83
+  name: reagent-name-cmu-rm83
+  desc: reagent-desc-cmu-rm83
+  physicalDesc: reagent-physical-desc-viscous
+  flavor: bitter
+  color: "#a36f6f"
+  unknown: true
+  overdose: 20
+  metabolisms:  
+    Bloodstream:  
+      cmuToxicity: [ Poison ]  
+      metabolismRate: 0.1  
+      effects:  
+      - !type:Mycotoxigenic
+        requiresOverdose: false
