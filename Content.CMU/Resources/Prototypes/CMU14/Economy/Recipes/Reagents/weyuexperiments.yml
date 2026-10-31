@@ -45,6 +45,11 @@
       metabolismRate: 0.1  
       effects:
       - !type:Mycotoxigenic
+        requiresOverdose: true
+      - !type:Neuroinhibiting
+        potency: 2
+      - !type:Psychostimulating
+        potency: 2
 
 - type: reaction
   id: CMURM83
@@ -86,4 +91,6 @@
       - !type:Musclestimulating
         potency: 6
       - !type:Hyperdensificating
+        potency: 6
+      - !type:Euphoric
         potency: 6
