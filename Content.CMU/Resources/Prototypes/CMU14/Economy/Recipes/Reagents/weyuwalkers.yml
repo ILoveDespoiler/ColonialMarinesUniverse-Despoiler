@@ -32,3 +32,11 @@
       effects:  
       - !type:Mycotoxigenic
         requiresOverdose: false
+      - !type:Neogenetic
+        potency: 6
+      - !type:Anticorrosive
+        potency: 6
+      - !type:Bonemending
+        potency: 5
+      - !type:Musclestimulating
+        potency: 6
