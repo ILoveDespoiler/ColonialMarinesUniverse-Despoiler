@@ -85,3 +85,5 @@
         potency: 6
       - !type:Musclestimulating
         potency: 6
+      - !type:Hyperdensificating
+        potency: 6
