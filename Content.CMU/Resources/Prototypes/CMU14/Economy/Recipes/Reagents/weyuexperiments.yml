@@ -42,7 +42,7 @@
   metabolisms:  
     Bloodstream:  
       cmuToxicity: [ Poison ]  
-      metabolismRate: 0.1  
+      metabolismRate: 0.1
       effects:
       - !type:Mycotoxigenic
         requiresOverdose: true
@@ -77,8 +77,7 @@
   overdose: 20
   metabolisms:  
     Bloodstream:  
-      cmuToxicity: [ Poison ]  
-      metabolismRate: 0.1  
+      metabolismRate: 0.1
       effects:  
       - !type:Mycotoxigenic
         requiresOverdose: false
