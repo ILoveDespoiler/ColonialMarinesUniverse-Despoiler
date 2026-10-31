@@ -1,0 +1,74 @@
+# Weyland-Yutani lab Mycotoxin Experiment: RM-82 syringe, its shipment crate, primer document.
+- type: entity
+  parent: BaseSyringe
+  id: CMUSyringeRM82
+  name: RM-82 syringe
+  description: A syringe of Weyland-Yutani experimental compound RM-82. The label reads "Not approved for human trials."
+  components:
+  - type: Solution
+    solution:
+      maxVol: 15
+      reagents:
+      - ReagentId: CMURM82
+        Quantity: 15
+  - type: Injector
+    activeModeProtoId: SyringeInjectMode
+    currentTransferAmount: 15
+
+- type: entity
+  id: CMUCrateRM82
+  parent: AU14CrateSecureWeYuXenoEggs
+  name: RM-82 shipment
+  suffix: CMU, RM-82
+  components:
+  - type: StorageFill
+    contents:
+      - id: CMUSyringeRM82
+        amount: 4
+
+# Faxed to the WY Lab when it reaches research clearance 3. Deliberately vague about what each phase is.
+- type: entity
+  parent: CMPaper
+  id: CMUPaperMycotoxinLabBriefing
+  name: Project RM briefing
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Paper
+    stampState: paper_stamp-centcom
+    stampedBy:
+    - stampedColor: "#7a1f1f"
+      stampedName: Weyland-Yutani Biological Research Division
+    content: >2-
+                [color=#7a1f1f]⬢[/color] [head=2]Weyland-Yutani Biological Research Division[/head] [color=#7a1f1f]⬢[/color]
+      [color=#7a1f1f]▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[/color]
+      [bold]PROJECT RM. CLEARANCE 3. EYES ONLY.[/bold]
+
+      Your laboratory has been cleared to continue Project RM. RM-82 is now available through your ASRS terminal under Research. Stock is limited and slow to restock: do not waste it.
+
+      [head=3]1. Candidate selection[/head]
+      • A living, unaugmented human. Synthetics and non-human candidates do not respond.
+      • The candidate must be alive when the trial begins.
+      • The trial begins when the candidate is injected with a full 15u dose of RM-82.
+      • The effects of the injection are unnoticeable until the trigger takes place.
+      • Once the subject has been injected, they are to be executed. Do not use fire.
+
+      [head=3]2. Materials[/head]
+      • [bold]Stabilized Mutagen[/bold]: 10u Dylovene, 5u Uranium, 1u Gold, 5u Unstable Mutagen. Yields 15u.
+        Unstable Mutagen: 1u Chlorine, 1u Radium, 1u Phosphorus. Yields 3u.
+      • [bold]RM-82[/bold]: ASRS, Research category.
+      • [bold]RM-83[/bold] (conditioned compound): 15u MH-82, 15u Gold, 10u Platinum, 32u Black Sludge. Yields 15u.
+        Black Sludge: 16u each of Bicaridine, Meralyne, Kelotane and Dermaline. Yields 64u.
+      • Compounds are administered by injection only, in [bold]full 15-unit doses[/bold]. Check your injector setting before every administration.
+
+      [head=3]3. Observations and warnings[/head]
+      • The compound has been found to assist with repair of damaged neural tissue in low doses.
+      • The 15u injection is an overdose. The desired effect will not trigger unless more than 10u of the chemical is within the subjects system at once.
+      • Subjects who receive an overdose of RM-82 and trigger its effects have shown severe degredation in brain function and may be aggressive or feral.
+      • RM-82 subjects have been known to suddenly gain a connection with [REDACTED]. If this occurs, execute the subject again and prepare facility lockdown.
+      • RM-83 has several benefits besides the similar effect to RM-82. Do not overdose on RM-83, the desired effect will take place regardless of the amount injected.
+      • A second death of the candidate at any point terminates the trial.
+      • Restrain the candidate and clear the room before administration. Without conditioning, the result is hostile to everyone. Conditioning results in the subject retaining all previous loyalties.
+      • RM-83 should be distributed among Security, PMC, or High Value personelle.
+
+      [color=#7a1f1f]▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[/color]
+      [italic][color=#8a9baf]Weyland-Yutani Corporation // Building Better Worlds // Destroy after reading.[/color][/italic]
