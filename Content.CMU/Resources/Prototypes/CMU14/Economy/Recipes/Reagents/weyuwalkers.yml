@@ -12,8 +12,22 @@
     Bloodstream:  
       cmuToxicity: [ Poison ]  
       metabolismRate: 0.1  
-      effects:  
+      effects:
       - !type:Mycotoxigenic
+
+- type: reaction
+  id: CMURM83
+  reactants:
+    CMURM82:
+      amount: 15
+    CMUBlackSludge:
+      amount: 20
+    CMUStabilizedMutagen:
+      amount: 10
+    RMCGold:
+      amount: 5
+  products:
+    CMURM83: 15
 
 - type: reagent
   parent: CMReagent
