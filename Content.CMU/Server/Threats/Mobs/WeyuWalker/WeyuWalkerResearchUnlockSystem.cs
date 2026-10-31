@@ -179,7 +179,7 @@ public sealed partial class CMUWendigoResearchUnlockSystem : EntitySystem
         var category = comp.Categories.FirstOrDefault(c => c.Name == ResearchCategory);
         if (category == null)
         {
-            Log.Warning($"ASRS console {ToPrettyString(uid)} has no {ResearchCategory} category; MH-32 not added.");
+            Log.Warning($"ASRS console {ToPrettyString(uid)} has no {ResearchCategory} category; RM-82 not added.");
             return;
         }
 
