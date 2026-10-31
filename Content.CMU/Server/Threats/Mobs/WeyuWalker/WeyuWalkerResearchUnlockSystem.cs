@@ -15,7 +15,7 @@ using Content.Shared._RMC14.Requisitions.Components;
 using Content.Shared.CMU14.Chemistry.Research;
 using Content.Shared.CMU14.Requisitions;
 
-namespace Content.Server.CMU14.Threats.Mobs.Wendigo.Lab;
+namespace Content.Server.CMU14.Threats.Mobs.WeyuWalker.Lab;
 
 /// <summary>
 /// Research clearance rewards: every WY Lab clearance increase credits the corporate ASRS account,
