@@ -104,6 +104,7 @@ public sealed partial class XenoSystem : EntitySystem
     private EntityQuery<XenoPlasmaComponent> _xenoPlasmaQuery;
     private EntityQuery<XenoRecoveryPheromonesComponent> _xenoRecoveryQuery;
     private EntityQuery<VictimInfectedComponent> _victimInfectedQuery;
+    
 
     private float _xenoDamageDealtMultiplier;
     private float _xenoDamageReceivedMultiplier;
@@ -152,6 +153,10 @@ public sealed partial class XenoSystem : EntitySystem
         SubscribeLocalEvent<XenoRegenComponent, DamageStateCritBeforeDamageEvent>(OnXenoRegenBeforeCritDamage, before: [typeof(SharedXenoPheromonesSystem)]);
 
         SubscribeLocalEvent<XenoComponent, RMCGetFixedIdentityEvent>(OnIdentificationAttempt);
+
+        SubscribeLocalEvent<XenoComponent, GetMeleeDamageEvent>(OnHiveGetMeleeDamage);
+        SubscribeLocalEvent<XenoComponent, CMGetArmorEvent>(OnHiveGetArmor);
+        SubscribeLocalEvent<XenoComponent, RefreshMovementSpeedModifiersEvent>(OnHiveRefreshSpeed);
 
         //In XenoSystem.Visuals
         SubscribeLocalEvent<XenoStateVisualsComponent, MobStateChangedEvent>(OnVisualsMobStateChanged);
@@ -614,6 +619,34 @@ public sealed partial class XenoSystem : EntitySystem
 
         time = leader.FriendlyStunTime;
         return true;
+    }
+
+    private void OnHiveGetMeleeDamage(Entity<XenoComponent> xeno, ref GetMeleeDamageEvent args)  
+    {  
+        if (TryComp<HiveMemberComponent>(xeno, out var member) &&  
+            TryComp<HiveComponent>(member.Hive, out var hive))  
+        {  
+            args.Damage *= hive.MeleeDamageMultiplier;  
+        }  
+    }  
+  
+    private void OnHiveGetArmor(Entity<XenoComponent> xeno, ref CMGetArmorEvent args)  
+    {  
+        if (TryComp<HiveMemberComponent>(xeno, out var member) &&  
+            TryComp<HiveComponent>(member.Hive, out var hive))  
+        {  
+            args.XenoArmor += hive.ArmorBonus;  
+        }  
+    }  
+      
+    private void OnHiveRefreshSpeed(Entity<XenoComponent> xeno, ref RefreshMovementSpeedModifiersEvent args)  
+    {  
+        if (TryComp<HiveMemberComponent>(xeno, out var member) &&  
+            TryComp<HiveComponent>(member.Hive, out var hive) &&  
+            !MathHelper.CloseTo(hive.SpeedMultiplier, 1f))  
+        {  
+            args.ModifySpeed(hive.SpeedMultiplier, hive.SpeedMultiplier);  
+        }  
     }
 
     public override void Update(float frameTime)
