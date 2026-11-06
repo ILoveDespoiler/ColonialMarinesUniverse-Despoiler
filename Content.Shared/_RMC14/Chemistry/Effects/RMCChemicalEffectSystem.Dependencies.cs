@@ -249,7 +249,7 @@ public sealed partial class RMCChemicalEffectSystem
             3 => "alpha",
             4 => "bravo",
             5 => "charlie",
-            6 => "delta",
+            >= 6 => "delta", // CMU14
             _ => "prime",
         };
 
