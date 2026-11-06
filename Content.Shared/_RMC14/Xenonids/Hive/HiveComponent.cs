@@ -133,4 +133,13 @@ public sealed partial class HiveComponent : Component
 
     [DataField, AutoNetworkedField]
     public EntProtoId BurrowedLarvaId = "CMXenoLarva";
+
+    [DataField, AutoNetworkedField]  // CMU 14
+    public float MeleeDamageMultiplier = 1f;  
+  
+    [DataField, AutoNetworkedField]  
+    public int ArmorBonus = 0;  
+  
+    [DataField, AutoNetworkedField]  
+    public float SpeedMultiplier = 1f; // CMU 14
 }
