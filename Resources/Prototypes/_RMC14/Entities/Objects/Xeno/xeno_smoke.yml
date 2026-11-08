@@ -270,3 +270,49 @@
   id: RMCSmokeNeurotoxin
   updatesPerSecond: 2
   spreadOnOpenAir: true # CMU14: gas also fills empty tiles on connected z-levels.
+
+
+- type: entity  # CMU14 Trapper Haze Smoke
+  id: CMUPathogenSmokeCloud  
+  name: spore haze  
+  categories: [ HideSpawnMenu ]  
+  components:  
+  - type: Transform  
+    anchored: true  
+  - type: Physics  
+  - type: Fixtures  
+    fixtures:  
+      fix1:  
+        hard: false  
+        shape:  
+          !type:PhysShapeAabb  
+          bounds: "-0.4,-0.4,0.4,0.4"  
+        mask:  
+        - MobMask  
+        layer:  
+        - MidImpassable  
+  - type: Occluder  
+  - type: Sprite  
+    sprite: _RMC14/Effects/smoke.rsi  
+    state: smoke2  
+    color: "#C8C8C8"  
+  - type: SpriteColor  
+    color: "#C8C8C8"  
+  - type: TimedDespawn  
+    lifetime: 12  
+  - type: Tag  
+    tags:  
+    - HideContextMenu  
+  - type: Appearance  
+  - type: ActiveEdgeSpreader  
+  - type: EdgeSpreader  
+    id: CMUPathogenSmokeCloud  
+  - type: EvenSmoke  
+    spawn: CMUPathogenSmokeCloud  
+    range: 4  
+  - type: DeleteOnExplosion  
+  
+- type: edgeSpreader  
+  id: CMUPathogenSmokeCloud  
+  updatesPerSecond: 2  
+  spreadOnOpenAir: true # CMU14 Trapper Haze Smoke
