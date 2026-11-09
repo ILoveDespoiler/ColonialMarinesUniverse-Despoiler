@@ -14,15 +14,13 @@
     bodyType: Static
   - type: Fixtures
     fixtures:
-      fix1:
+      hitbox:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.15,-0.15,0.15,0.15"
-        density: 20
-        mask:
-        - ItemMask
-        restitution: 0.3
-        friction: 0.2
+          bounds: "-0.15,0.3,0.15,0.45"
+        hard: false
+        layer:
+        - BulletImpassable
       trap_trigger:
         shape:
           !type:PhysShapeCircle
