@@ -51,7 +51,11 @@
   - type: StepTrigger
     requiredTriggeredSpeed: 0
     intersectRatio: 0.1
-    stepOn: true
+    stepOn: false
+  - type: TriggerOnStepTrigger
+  - type: SpawnOnTrigger
+    proto: CMUPathogenSmokeCloud
+  - type: DeleteOnTrigger
   - type: DeployTrapsBlocker
   - type: XenoFriendly
   - type: XenoConstruct
