@@ -157,7 +157,7 @@
 
 - type: entity
   parent: CMU14PathogenTrapBase
-  id: CMU14PathogenSpineTrap
+  id: CMU14PathogenShrapnelTrap
   name: Spine Sac
   description: A hardened sac of bone spines. Detonates when disturbed, launching spines in every direction.
   components:
