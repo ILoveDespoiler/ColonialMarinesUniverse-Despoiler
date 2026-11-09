@@ -156,7 +156,6 @@
     spreadAngle: 360
   - type: ClusterLimitHits
     limit: 2
-  - type: DeleteOnTrigger
   - type: XenoConstructionPlasmaCost
     plasma: 120
   - type: XenoSecretionLimited
