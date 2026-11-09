@@ -79,6 +79,7 @@
     - CMU14XenoMyceliumMembrane
     - CMU14XenoMyceliumDoor
     - CMU14PathogenSmokeTrap # test
+    - CMU14PathogenBlastTrap #test
     canOrderConstruction:
     - CMU14PathogenBlightCoreConstructionNode
     - CMU14PathogenClusterConstructionNode
