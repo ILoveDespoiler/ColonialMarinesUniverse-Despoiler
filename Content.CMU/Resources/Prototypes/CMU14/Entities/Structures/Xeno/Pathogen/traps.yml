@@ -118,9 +118,59 @@
     canCreateVacuum: false
   - type: ExplodeOnTrigger
   - type: CMExplosionEffect
+    minShrapnel: 0
+    maxShrapnel: 0
   - type: RMCScorchEffect
   - type: XenoConstructionPlasmaCost
     plasma: 200
   - type: XenoSecretionLimited
     id: CMU14PathogenBlastTrap
     amount: 1
+    
+- type: entity
+  id: CMUGrenadeSpineFill
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      shrapnel:
+        !type:EntityTableSelector
+        table:
+        - proto: CMUProjectileBoneSpine
+          amount: 1
+  
+- type: entity
+  parent: RMCShrapnel  
+  id: CMUProjectileBoneSpine
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 10
+
+- type: entity  
+  parent: CMU14PathogenTrapBase  
+  id: CMU14PathogenShrapnelTrap
+  name: Spine Sac
+  description: A pustule packed with bone spines that bursts outward when disturbed.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/xeno_deployed_trap.rsi #test
+    state: trap_boiler #test
+  - type: Explosive
+    explosionType: RMC
+    maxIntensity: 1
+    intensitySlope: 5
+    totalIntensity: 1
+    canCreateVacuum: false
+    deleteAfterExplosion: false
+  - type: ExplodeOnTrigger
+  - type: ProjectileGrenade
+    capacity: 12
+    fillPrototype: CMUGrenadeSpineFill
+  - type: DeleteOnTrigger
+  - type: XenoConstructionPlasmaCost
+    plasma: 80
+  - type: XenoSecretionLimited
+    id: CMU14PathogenShrapnelTrap  
+    amount: 2
