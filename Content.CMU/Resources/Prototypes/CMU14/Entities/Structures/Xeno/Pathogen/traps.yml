@@ -94,8 +94,9 @@
   - type: DeleteOnTrigger
   - type: XenoConstructionPlasmaCost
     plasma: 100
-  - type: SoundOnTrigger
+  - type: EmitSoundOnTrigger
     sound: /Audio/Effects/smoke.ogg
+    positional: true
   - type: XenoSecretionLimited
     id: CMU14PathogenSmokeTrap
     amount: 6
