@@ -135,6 +135,12 @@
   name: Spine Sac
   description: A hardened sac of bone spines. Detonates when disturbed, launching spines in every direction.
   components:
+  - type: ContainerContainer
+    containers:
+      cluster-payload: !type:Container
+        ents: []
+        showEnts: False
+        occludes: True
   - type: Sprite
     sprite: _RMC14/Structures/Xenos/xeno_deployed_trap.rsi
     state: trap_boiler
@@ -142,23 +148,15 @@
   - type: EmitSoundOnTrigger
     sound: /Audio/Effects/snap.ogg
     positional: true
-  - type: ExplodeOnTrigger
-  - type: Explosive
-    explosionType: RMC
-    totalIntensity: 0.01
-    intensitySlope: 1
-    maxIntensity: 0.01
-    tileBreakScale: 0.01
-    canCreateVacuum: false
   - type: ProjectileGrenade
     evenSpread: false
     minVelocity: 1.5
     maxVelocity: 3
     fillPrototype: RMCShrapnel
     capacity: 24
-    spreadAngle: 360 
+    spreadAngle: 360
   - type: ClusterLimitHits
-    limit: 8
+    limit: 2
   - type: DeleteOnTrigger
   - type: XenoConstructionPlasmaCost
     plasma: 120
