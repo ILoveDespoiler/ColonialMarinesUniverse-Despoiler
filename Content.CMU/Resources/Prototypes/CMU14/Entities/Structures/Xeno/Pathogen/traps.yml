@@ -147,6 +147,13 @@
   - type: EmitSoundOnTrigger
     sound: /Audio/Effects/snap.ogg
     positional: true
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: RMC
+    totalIntensity: 0.01
+    intensitySlope: 1
+    maxIntensity: 0.01
+    canCreateVacuum: false
   - type: ProjectileGrenade
     evenSpread: false
     minVelocity: 1.5
@@ -156,6 +163,8 @@
     spreadAngle: 360
   - type: ClusterLimitHits
     limit: 2
+  - type: RequireProjectileTarget
+  - type: DeleteOnTrigger
   - type: XenoConstructionPlasmaCost
     plasma: 120
   - type: XenoSecretionLimited
