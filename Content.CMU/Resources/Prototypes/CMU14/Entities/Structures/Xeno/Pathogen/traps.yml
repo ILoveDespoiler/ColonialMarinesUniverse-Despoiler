@@ -14,13 +14,15 @@
     bodyType: Static
   - type: Fixtures
     fixtures:
-      hitbox:
+      fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.15,0.3,0.15,0.45"
-        hard: false
-        layer:
-        - BulletImpassable
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 20
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
       trap_trigger:
         shape:
           !type:PhysShapeCircle
@@ -147,13 +149,6 @@
   - type: EmitSoundOnTrigger
     sound: /Audio/Effects/snap.ogg
     positional: true
-  - type: ExplodeOnTrigger
-  - type: Explosive
-    explosionType: RMC
-    totalIntensity: 0.01
-    intensitySlope: 1
-    maxIntensity: 0.01
-    canCreateVacuum: false
   - type: ProjectileGrenade
     evenSpread: false
     minVelocity: 1.5
