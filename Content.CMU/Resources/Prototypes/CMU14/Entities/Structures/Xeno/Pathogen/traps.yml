@@ -130,27 +130,6 @@
     amount: 1
   - type: XenoConstructionBuildSpeed
     buildTimeMult: 1.0
-    
-- type: entity
-  id: CMUGrenadeSpineFill
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      shrapnel:
-        !type:EntityTableSelector
-        table:
-        - proto: CMUProjectileBoneSpine
-          amount: 1
-  
-- type: entity
-  parent: RMCShrapnel  
-  id: CMUProjectileBoneSpine
-  components:
-  - type: Projectile
-    damage:
-      types:
-        Piercing: 10
 
 - type: entity
   parent: CMU14PathogenTrapBase
@@ -174,9 +153,9 @@
     sound: /Audio/Effects/snap.ogg
     positional: true
   - type: ProjectileGrenade
-    evenSpread: true
-    minVelocity: 0.5
-    maxVelocity: 1.5
+    evenSpread: false
+    minVelocity: 1.5
+    maxVelocity: 3
     fillPrototype: RMCShrapnel
     capacity: 24
     spreadAngle: 360
