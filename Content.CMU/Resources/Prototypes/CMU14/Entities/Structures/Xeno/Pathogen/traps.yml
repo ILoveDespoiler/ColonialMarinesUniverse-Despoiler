@@ -74,8 +74,8 @@
   description: A small pustule that bursts into concealing smoke when disturbed.
   components:
   - type: Sprite
-    sprite: CMU14/Effects/pathogen_effects.rsi
-    state: smoke_trap
+    sprite: _RMC14/Structures/Xenos/xeno_deployed_trap.rsi #testing
+    state: trap_boiler #testing
   - type: SpawnOnTrigger
     proto: CMUPathogenSmokeCloud
   - type: DeleteOnTrigger
