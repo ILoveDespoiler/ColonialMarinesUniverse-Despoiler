@@ -141,14 +141,6 @@
     sprite: _RMC14/Structures/Xenos/xeno_deployed_trap.rsi
     state: trap_boiler
     drawdepth: FloorObjects
-  - type: ExplodeOnTrigger
-  - type: Explosive
-    explosionType: RMC
-    maxIntensity: 0.01
-    intensitySlope: 1
-    totalIntensity: 0.01
-    canCreateVacuum: false
-    deleteAfterExplosion: false
   - type: EmitSoundOnTrigger
     sound: /Audio/Effects/snap.ogg
     positional: true
