@@ -144,13 +144,21 @@
   - type: EmitSoundOnTrigger
     sound: /Audio/Effects/snap.ogg
     positional: true
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: RMC
+    totalIntensity: 0.01
+    intensitySlope: 1
+    maxIntensity: 0.01
+    tileBreakScale: 0.01
+    canCreateVacuum: false
   - type: ProjectileGrenade
     evenSpread: false
     minVelocity: 1.5
     maxVelocity: 3
     fillPrototype: RMCShrapnel
     capacity: 24
-    spreadAngle: 360
+    spreadAngle: 360 
   - type: ClusterLimitHits
     limit: 8
   - type: DeleteOnTrigger
