@@ -93,13 +93,15 @@
     proto: CMUPathogenSmokeCloud
   - type: DeleteOnTrigger
   - type: XenoConstructionPlasmaCost
-    plasma: 100
+    plasma: 40
   - type: EmitSoundOnTrigger
     sound: /Audio/Effects/smoke.ogg
     positional: true
   - type: XenoSecretionLimited
     id: CMU14PathogenSmokeTrap
     amount: 6
+  - type: XenoConstructionBuildSpeed  
+    buildTimeMult: 0.5
 
 - type: entity
   parent: CMU14PathogenTrapBase
@@ -110,22 +112,24 @@
   - type: Sprite
     sprite: _RMC14/Structures/Xenos/xeno_deployed_trap.rsi #testing
     state: trap_boiler   # testin g
+    drawdepth: FloorObjects
+  - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: RMC
     maxIntensity: 10
     intensitySlope: 5
     totalIntensity: 55
     canCreateVacuum: false
-  - type: ExplodeOnTrigger
   - type: CMExplosionEffect
-    minShrapnel: 0
     maxShrapnel: 0
-  - type: RMCScorchEffect
+  - type: DeleteOnTrigger
   - type: XenoConstructionPlasmaCost
-    plasma: 200
+    plasma: 175
   - type: XenoSecretionLimited
     id: CMU14PathogenBlastTrap
     amount: 1
+  - type: XenoConstructionBuildSpeed
+    buildTimeMult: 1.0
     
 - type: entity
   id: CMUGrenadeSpineFill
@@ -148,29 +152,39 @@
       types:
         Piercing: 10
 
-- type: entity  
-  parent: CMU14PathogenTrapBase  
+- type: entity
+  parent: CMU14PathogenTrapBase
   id: CMU14PathogenShrapnelTrap
   name: Spine Sac
-  description: A pustule packed with bone spines that bursts outward when disturbed.
+  description: A hardened sac packed with bone spines. Bursts outward when disturbed.
   components:
   - type: Sprite
-    sprite: _RMC14/Structures/Xenos/xeno_deployed_trap.rsi #test
-    state: trap_boiler #test
+    sprite: _RMC14/Structures/Xenos/xeno_deployed_trap.rsi
+    state: trap_boiler
+    drawdepth: FloorObjects
+  - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: RMC
     maxIntensity: 1
     intensitySlope: 5
     totalIntensity: 1
     canCreateVacuum: false
-    deleteAfterExplosion: false
-  - type: ExplodeOnTrigger
   - type: ProjectileGrenade
-    capacity: 12
-    fillPrototype: CMUGrenadeSpineFill
+    capacity: 14
+    fill:
+    - id: shrapnel
+      containers:
+        shrapnel:
+          !type:EntityTableSelector
+          table:
+          - proto: CMUProjectileBoneSpine
+            amount: 1
+    deleteAfterExplosion: false
   - type: DeleteOnTrigger
   - type: XenoConstructionPlasmaCost
-    plasma: 80
+    plasma: 110
   - type: XenoSecretionLimited
-    id: CMU14PathogenShrapnelTrap  
+    id: CMU14PathogenShrapnelTrap
     amount: 2
+  - type: XenoConstructionBuildSpeed
+    buildTimeMult: 0.75
