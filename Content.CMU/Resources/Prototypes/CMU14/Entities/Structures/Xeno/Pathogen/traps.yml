@@ -131,6 +131,31 @@
     buildTimeMult: 1.0
 
 - type: entity
+  parent: XenoBaseProjectile
+  id: CMUProjectileBoneSpine
+  name: Bone Spine
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Materials/shards.rsi
+    layers:
+    - state: bonechips
+      shader: unshaded
+  - type: Projectile
+    impactEffect: BulletImpactEffect
+    damage:
+      types:
+        Piercing: 25
+    soundHit:
+      path: /Audio/Weapons/Guns/Hits/bullet_hit.ogg
+  - type: CMUProjectileShrapnel
+    severity: 15
+  - type: XenoProjectile
+    deleteOnFriendlyXeno: false
+  - type: ProjectileMaxRange
+    max: 8
+
+- type: entity
   parent: CMU14PathogenTrapBase
   id: CMU14PathogenSpineTrap
   name: Spine Sac
@@ -151,7 +176,7 @@
     positional: true
   - type: ProjectileGrenade
     triggerKey: trigger
-    fillPrototype: RMCShrapnel
+    fillPrototype: CMUProjectileBoneSpine
     capacity: 24
     minVelocity: 1.5
     maxVelocity: 3
