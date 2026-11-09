@@ -150,12 +150,11 @@
     sound: /Audio/Effects/snap.ogg
     positional: true
   - type: ProjectileGrenade
-    evenSpread: false
-    minVelocity: 1.5
-    maxVelocity: 3
+    triggerKey: trigger
     fillPrototype: RMCShrapnel
     capacity: 24
-    spreadAngle: 360
+    minVelocity: 1.5
+    maxVelocity: 3
   - type: ClusterLimitHits
     limit: 2
   - type: RequireProjectileTarget
