@@ -1,10 +1,13 @@
 - type: entity
   abstract: true
-  parent: CMBaseXenoStructure
   id: CMU14PathogenTrapBase
+  name: pathogen trap
   placement:
     mode: SnapgridCenter
+    snap:
+    - Wall
   components:
+  - type: DeployTrapsBlocker
   - type: Transform
     anchored: true
   - type: Physics
@@ -20,6 +23,8 @@
         - ItemMask
         layer:
         - BulletImpassable
+        restitution: 0.3
+        friction: 0.2
       trap_trigger:
         shape:
           !type:PhysShapeCircle
@@ -31,7 +36,9 @@
         - MobLayer
   - type: Clickable
   - type: Sprite
+    sprite: _RMC14/Structures/Xenos/xeno_deployed_trap.rsi
     drawdepth: FloorObjects
+    state: trap_boiler
   - type: Damageable
     damageContainer: StructuralXeno
   - type: Destructible
@@ -53,10 +60,8 @@
     intersectRatio: 0.1
     stepOn: false
   - type: TriggerOnStepTrigger
-  - type: SpawnOnTrigger
-    proto: CMUPathogenSmokeCloud
-  - type: DeleteOnTrigger
-  - type: DeployTrapsBlocker
+  - type: XenoDeployedTraps
+    stunDuration: 0
   - type: XenoFriendly
   - type: XenoConstruct
   - type: RMCNightVisionVisible
@@ -69,7 +74,6 @@
     damage:
       types:
         Heat: 2
-
 
 - type: entity  
   parent: CMU14PathogenTrapBase  
