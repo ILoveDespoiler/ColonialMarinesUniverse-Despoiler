@@ -40,6 +40,8 @@
     drawdepth: FloorObjects
     state: trap_boiler
   - type: Damageable
+    damageModifierSet: Resin
+  - type: Injurable
     damageContainer: StructuralXeno
   - type: Destructible
     thresholds:
@@ -47,8 +49,11 @@
         !type:DamageTrigger
         damage: 10
       behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: XenoResinBreak
       - !type:DoActsBehavior
-        acts: [ "Destruction" ]
+        acts: ["Destruction"]
     - trigger:
         !type:DamageTypeTrigger
         damageType: Heat
