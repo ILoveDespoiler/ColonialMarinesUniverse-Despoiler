@@ -154,9 +154,9 @@
 
 - type: entity
   parent: CMU14PathogenTrapBase
-  id: CMU14PathogenShrapnelTrap
+  id: CMU14PathogenSpineTrap
   name: Spine Sac
-  description: A hardened sac packed with bone spines. Bursts outward when disturbed.
+  description: A hardened sac of bone spines. Detonates when disturbed, launching spines in every direction.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Xenos/xeno_deployed_trap.rsi
@@ -165,26 +165,28 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: RMC
-    maxIntensity: 1
-    intensitySlope: 5
-    totalIntensity: 1
+    maxIntensity: 0.01
+    intensitySlope: 1
+    totalIntensity: 0.01
     canCreateVacuum: false
-  - type: ProjectileGrenade
-    capacity: 14
-    fill:
-    - id: shrapnel
-      containers:
-        shrapnel:
-          !type:EntityTableSelector
-          table:
-          - proto: CMUProjectileBoneSpine
-            amount: 1
     deleteAfterExplosion: false
+  - type: EmitSoundOnTrigger
+    sound: /Audio/Effects/snap.ogg
+    positional: true
+  - type: ProjectileGrenade
+    evenSpread: true
+    minVelocity: 0.5
+    maxVelocity: 1.5
+    fillPrototype: RMCShrapnel
+    capacity: 24
+    spreadAngle: 360
+  - type: ClusterLimitHits
+    limit: 8
   - type: DeleteOnTrigger
   - type: XenoConstructionPlasmaCost
-    plasma: 110
+    plasma: 120
   - type: XenoSecretionLimited
-    id: CMU14PathogenShrapnelTrap
+    id: CMU14PathogenSpineTrap
     amount: 2
   - type: XenoConstructionBuildSpeed
     buildTimeMult: 0.75
