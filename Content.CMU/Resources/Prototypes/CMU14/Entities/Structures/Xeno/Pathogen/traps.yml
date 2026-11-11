@@ -162,27 +162,30 @@
     priority: -1
     transparency: 0.2
 
-- type: entity  
-  parent: CMU14PathogenTrapBase  
-  id: CMU14PathogenSmokeTrap  
+- type: entity
+  parent: CMU14PathogenTrapBase
+  id: CMU14PathogenSmokeTrap
   name: Smoke Sac
   description: A small pustule that bursts into concealing smoke when disturbed.
   components:
   - type: Sprite
-    sprite: _RMC14/Structures/Xenos/xeno_deployed_trap.rsi #testing
-    state: trap_boiler #testing
-  - type: SpawnOnTrigger
-    proto: CMUPathogenSmokeCloud
-  - type: DeleteOnTrigger
+    sprite: _RMC14/Structures/Xenos/xeno_deployed_trap.rsi
+    state: trap_boiler
+  - type: TwoStageTrigger
+    triggerDelay: 1.5
+    components:
+      SpawnOnTrigger:
+        proto: CMUPathogenSmokeCloud
+      EmitSoundOnTrigger:
+        sound: /Audio/Effects/smoke.ogg
+        positional: true
+      DeleteOnTrigger: { }
   - type: XenoConstructionPlasmaCost
     plasma: 40
-  - type: EmitSoundOnTrigger
-    sound: /Audio/Effects/smoke.ogg
-    positional: true
   - type: XenoSecretionLimited
     id: CMU14PathogenSmokeTrap
     amount: 6
-  - type: XenoConstructionBuildSpeed  
+  - type: XenoConstructionBuildSpeed
     buildTimeMult: 0.5
 
 - type: entity
