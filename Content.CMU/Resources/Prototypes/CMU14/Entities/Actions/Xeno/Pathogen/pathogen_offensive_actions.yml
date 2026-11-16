@@ -1218,13 +1218,18 @@
     useDelay: 15
   - type: Sprite
     layers:
-    - sprite: CMU14/Actions/pathogen_actions.rsi
+    - sprite: CMU14/Actions/actions_pathogen.rsi
       state: butchering
       map: ["enum.ActionVisuals.Icon"]
-  - type: EntityTargetAction
+  - type: TargetAction  
+    range: 1.5  
+    deselectOnMiss: false  
+  - type: EntityTargetAction  
+  - type: WorldTargetAction  
     event: !type:CMUPathogenExecuteActionEvent
-    range: 1.5
   - type: XenoOffensiveAction
   - type: ActionBlockIfResting
   - type: XenoActionPlasma
     cost: 60
+  - type: RMCCooldownOnMiss
+    missCooldown: 0.7
