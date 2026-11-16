@@ -6,7 +6,7 @@ using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Effects;
 using Content.Shared.FixedPoint;
-using Content.Shared.Coordinates
+using Content.Shared.Coordinates;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Weapons.Melee;
 using Robust.Shared.Audio.Systems;
