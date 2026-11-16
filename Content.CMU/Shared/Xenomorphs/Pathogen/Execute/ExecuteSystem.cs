@@ -93,8 +93,8 @@ public sealed class CMUPathogenExecuteSystem : EntitySystem
         if (ent.Comp.Sound != null)
             _audio.PlayPvs(ent.Comp.Sound, ent);
         
-        if (ent.Comp.Animation is { } anim)  
-            SpawnAttachedTo(anim, target.ToCoordinates());
+        if (ent.Comp.Animation is { } anim)
+            SpawnAttachedTo(anim, targetId.ToCoordinates());
     }
   
     private void ExecuteMiss(Entity<CMUPathogenExecuteComponent> ent, EntityUid action)
