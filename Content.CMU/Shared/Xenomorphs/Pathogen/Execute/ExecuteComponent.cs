@@ -21,5 +21,8 @@ public sealed partial class CMUPathogenExecuteComponent : Component
     public int ArmorPiercing = 10;
   
     [DataField, AutoNetworkedField]
-    public SoundSpecifier? Sound;
+    public SoundSpecifier? Sound = new SoundPathSpecifier("/Audio/_RMC14/Xeno/alien_tail_attack.ogg");
+
+    [DataField, AutoNetworkedField]
+    public EntProtoId Animation = "RMCEffectTailHit";
 }
