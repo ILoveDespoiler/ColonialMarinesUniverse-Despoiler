@@ -62,7 +62,17 @@
     - CMU14ActionXenoPathogenDevolve
     - CMU14ActionXenoPathogenOrderConstruction
     - CMU14ActionXenoPathogenRegurgitate
+    - CMU14ActionXenoPathogenExecute
   - type: TunnelRenamer
+  - type: CMUPathogenExecute  
+    baseDamage:  
+      types:  
+        Slash: 35  
+    bonusDamage:  
+      types:  
+        Slash: 60  
+    bonusThresholdRatio: 0.5  
+    armorPiercing: 10
   - type: XenoBurrow
   - type: XenoConstruction
     buildDelay: 1
