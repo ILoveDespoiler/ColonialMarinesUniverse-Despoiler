@@ -4,7 +4,7 @@ using Robust.Shared.GameStates;
 namespace Content.Shared.CMU14.Xenomorphs.Pathogen.AssassinMark;
   
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-[Access(typeof(CMUAssassinMarkSystem))]
+[Access(typeof(AssassinMarkSystem))]
 public sealed partial class AssassinMarkComponent : Component
 {
     [DataField, AutoNetworkedField]
