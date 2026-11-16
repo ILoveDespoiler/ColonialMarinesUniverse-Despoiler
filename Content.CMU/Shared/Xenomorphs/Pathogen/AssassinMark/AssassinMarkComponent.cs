@@ -5,7 +5,7 @@ namespace Content.Shared.CMU14.Xenomorphs.Pathogen.AssassinMark;
   
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 [Access(typeof(CMUAssassinMarkSystem))]
-public sealed partial class CMUAssassinMarkComponent : Component
+public sealed partial class AssassinMarkComponent : Component
 {
     [DataField, AutoNetworkedField]
     public TimeSpan Duration = TimeSpan.FromSeconds(10);
