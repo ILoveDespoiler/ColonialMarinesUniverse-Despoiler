@@ -1,5 +1,5 @@
-using Content.Shared.Actions;
+using Content.Shared.Actions;  
   
-namespace Content.Shared.CMU14.Xenomorphs.Pathogen.Execute;
+namespace Content.Shared.CMU14.Xenomorphs.Pathogen.Execute;  
   
-public sealed partial class CMUPathogenExecuteActionEvent : EntityTargetActionEvent;
+public sealed partial class CMUPathogenExecuteActionEvent : WorldTargetActionEvent;
