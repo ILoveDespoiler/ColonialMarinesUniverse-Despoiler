@@ -63,6 +63,7 @@
     - CMU14ActionXenoPathogenOrderConstruction
     - CMU14ActionXenoPathogenRegurgitate
     - CMU14ActionXenoPathogenExecute
+    - CMU14ActionXenoPathogenAssassinMark
   - type: TunnelRenamer
   - type: CMUPathogenExecute  
     baseDamage:  
@@ -73,6 +74,9 @@
         Slash: 60  
     bonusThresholdRatio: 0.5  
     armorPiercing: 10
+  - type: CMUAssassinMark
+    duration: 10
+    damageMultiplier: 1.30
   - type: XenoBurrow
   - type: XenoConstruction
     buildDelay: 1
