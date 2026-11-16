@@ -1207,3 +1207,24 @@
   - type: ActionBlockIfResting
   - type: XenoActionPlasma
     cost: 50
+
+- type: entity
+  parent: ActionXenoBase
+  id: CMU14ActionXenoPathogenExecute
+  name: Execute (60)
+  description: A finishing strike that deals bonus damage to wounded targets.
+  components:
+  - type: Action
+    useDelay: 15
+  - type: Sprite
+    layers:
+    - sprite: CMU14/Actions/pathogen_actions.rsi
+      state: butchering
+      map: ["enum.ActionVisuals.Icon"]
+  - type: EntityTargetAction
+    event: !type:CMUPathogenExecuteActionEvent
+    range: 1.5
+  - type: XenoOffensiveAction
+  - type: ActionBlockIfResting
+  - type: XenoActionPlasma
+    cost: 60
