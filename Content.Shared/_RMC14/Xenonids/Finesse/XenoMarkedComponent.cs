@@ -1,9 +1,10 @@
 ﻿using Robust.Shared.GameStates;
+using Content.Shared.CMU14.Xenomorphs.Pathogen.AssassinMark; // CMU14
 
 namespace Content.Shared._RMC14.Xenonids.Finesse;
 
 [RegisterComponent, NetworkedComponent]
-[Access(typeof(XenoFinesseSystem))]
+[Access(typeof(XenoFinesseSystem), typeof(CMUAssassinMarkSystem))] // CMU14
 public sealed partial class XenoMarkedComponent : Component
 {
     [DataField]
