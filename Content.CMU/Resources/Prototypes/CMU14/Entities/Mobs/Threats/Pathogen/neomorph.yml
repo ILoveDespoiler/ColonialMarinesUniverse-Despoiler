@@ -74,7 +74,7 @@
         Slash: 60  
     bonusThresholdRatio: 0.5  
     armorPiercing: 10
-  - type: CMUAssassinMark
+  - type: AssassinMark
     duration: 10
     damageMultiplier: 1.30
   - type: XenoBurrow
