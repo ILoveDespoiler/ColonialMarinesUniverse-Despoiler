@@ -35,8 +35,8 @@ public sealed class AssassinMarkSystem : EntitySystem
         if (target == null || !_xeno.CanAbilityAttackTarget(ent, target.Value))
             return;
   
-        // Line of sight check  
-        if (!_interaction.InRangeUnobstructed(ent.Owner, target.Value))
+        // Line of sight check
+        if (!_interaction.InRangeUnobstructed(ent.Owner, target.Value, range: ent.Comp.Range))
             return;
   
         if (!_rmcActions.TryUseAction(args))
