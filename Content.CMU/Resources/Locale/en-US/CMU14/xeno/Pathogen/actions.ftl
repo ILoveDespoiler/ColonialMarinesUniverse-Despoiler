@@ -58,3 +58,7 @@ cmu-xeno-infection-burst-now-xeno-back = We rip {POSS-ADJ($victim)} spine out th
 # Queen word
 
 cmu-pathogen-words-of-the-overmind-header = The thoughts of the Overmind echo through the Confluence...
+
+# Assassin Mark
+
+cmu-assassin-mark-warning = You suddenly feel exposed.
