@@ -1234,7 +1234,7 @@
   - type: RMCCooldownOnMiss
     missCooldown: 0.7
 
-  - type: entity
+- type: entity
   parent: ActionXenoBase
   id: CMU14ActionXenoPathogenAssassinMark
   name: Assassin Mark (40)
