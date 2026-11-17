@@ -12,4 +12,7 @@ public sealed partial class AssassinMarkComponent : Component
   
     [DataField, AutoNetworkedField]
     public FixedPoint2 DamageMultiplier = 1.30f;
+
+    [DataField, AutoNetworkedField]
+    public float Range = 8f;
 }
